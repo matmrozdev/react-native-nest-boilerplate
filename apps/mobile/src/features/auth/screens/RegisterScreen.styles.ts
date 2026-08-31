@@ -1,0 +1,50 @@
+import { StyleSheet } from 'react-native-unistyles';
+
+export const styles = StyleSheet.create((theme) => ({
+  actions: {
+    marginTop: theme.spacing.xs,
+  },
+  card: {
+    borderRadius: theme.borderRadius.xl,
+    gap: {
+      phone: theme.spacing.xl,
+      tablet: theme.spacing.xxl,
+      desktop: theme.spacing.xxl,
+    },
+  },
+  content: {
+    alignSelf: 'center',
+    gap: {
+      phone: theme.spacing.xl,
+      tablet: theme.spacing.xxl,
+      desktop: theme.spacing.xxl,
+    },
+    justifyContent: 'center',
+    maxWidth: theme.sizes.contentMaxWidth,
+    width: '100%',
+  },
+  form: {
+    gap: theme.spacing.lg,
+  },
+  header: {
+    alignItems: 'center',
+    gap: theme.spacing.sm,
+  },
+  signInButton: {
+    minHeight: theme.sizes.minTouchTarget,
+    paddingHorizontal: theme.spacing.sm,
+  },
+  signInPrompt: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: theme.spacing.xxs,
+    justifyContent: 'center',
+  },
+  subtitle: {
+    textAlign: 'center',
+  },
+  title: {
+    textAlign: 'center',
+  },
+}));

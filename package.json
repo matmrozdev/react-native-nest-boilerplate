@@ -1,0 +1,41 @@
+{
+  "name": "react-native-nest-boilerplate",
+  "private": true,
+  "packageManager": "pnpm@11.21.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "mobile": "pnpm --filter mobile",
+    "api": "pnpm --filter api",
+    "dev:mobile": "pnpm --filter mobile start",
+    "dev:api": "pnpm --filter api start:dev",
+    "db:generate": "pnpm --filter api prisma:generate",
+    "db:migrate": "pnpm --filter api db:migrate",
+    "db:migrate:deploy": "pnpm --filter api db:migrate:deploy",
+    "db:reset": "pnpm --filter api db:reset",
+    "db:status": "pnpm --filter api db:status",
+    "test:e2e:api": "pnpm --filter api test:e2e",
+    "typecheck": "pnpm --recursive --if-present typecheck",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "audit:dependencies": "pnpm audit --audit-level=low",
+    "validate": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm --filter api test --runInBand && pnpm --filter mobile test && pnpm --filter api build && pnpm audit:dependencies",
+    "prepare": "husky",
+    "validate:branch": "node scripts/git/validate-branch-name.mjs"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "eslint-config-expo": "~57.0.1",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^17.0.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.20.0"
+  }
+}
