@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { testIds } from '@app/e2e-contract/test-ids';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { type Href, useLocalSearchParams, useRouter } from 'expo-router';
 import { Controller, useForm } from 'react-hook-form';
@@ -44,7 +45,9 @@ export const LoginScreen = () => {
   return (
     <Screen contentContainerStyle={styles.content}>
       <View style={styles.header}>
-        <Text variant="heading">Welcome back</Text>
+        <Text testID={testIds.auth.login.screen} variant="heading">
+          Welcome back
+        </Text>
         <Text tone="muted">Sign in to continue to the application.</Text>
       </View>
 
@@ -59,6 +62,7 @@ export const LoginScreen = () => {
             <Text
               accessibilityRole="alert"
               style={styles.successText}
+              testID={testIds.auth.login.successMessage}
               tone="success"
             >
               Account created. Sign in with your new credentials.
@@ -85,6 +89,7 @@ export const LoginScreen = () => {
                 onBlur={onBlur}
                 onChangeText={onChange}
                 returnKeyType="next"
+                testID={testIds.auth.login.emailInput}
                 value={value}
               />
             )}
@@ -103,6 +108,7 @@ export const LoginScreen = () => {
                 onSubmitEditing={submit}
                 returnKeyType="done"
                 secureTextEntry
+                testID={testIds.auth.login.passwordInput}
                 value={value}
               />
             )}
@@ -115,6 +121,7 @@ export const LoginScreen = () => {
             loading={loginMutation.isPending}
             onPress={submit}
             size="large"
+            testID={testIds.auth.login.submitButton}
           />
           <View style={styles.registerPrompt}>
             <Text tone="muted">New here?</Text>
@@ -124,6 +131,7 @@ export const LoginScreen = () => {
               onPress={() => router.push('/register' as Href)}
               size="small"
               style={styles.registerButton}
+              testID={testIds.auth.login.createAccountButton}
               variant="ghost"
             />
           </View>

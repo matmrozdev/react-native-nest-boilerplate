@@ -1,0 +1,9 @@
+{
+  "name": "@app/e2e-contract",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./test-ids": "./src/test-ids.ts",
+    "./test-ids.json": "./src/test-ids.json"
+  }
+}

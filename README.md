@@ -16,6 +16,7 @@ rules without prescribing a product domain.
 - PostgreSQL and Prisma with an authentication-only initial migration
 - Swagger API documentation
 - Reusable themed UI components powered by React Native Unistyles
+- Maestro E2E infrastructure for critical authentication journeys
 - ESLint, Prettier, commitlint, Husky, Jest, CodeQL, and GitHub Actions
 - Reusable repository rules and agent skills under `.agents/`
 
@@ -25,6 +26,7 @@ rules without prescribing a product domain.
 - pnpm 11.25+
 - Docker with Docker Compose
 - Android Studio or Xcode for native development
+- Java 17+ and Maestro CLI 2.10.0 for mobile E2E tests
 
 ## Setup
 
@@ -61,7 +63,12 @@ pnpm format:check
 pnpm --filter api test
 pnpm --filter mobile test
 pnpm test:e2e:api
+pnpm validate:e2e
+pnpm test:e2e:mobile:smoke
 ```
+
+See [`apps/e2e/README.md`](apps/e2e/README.md) for the disposable database,
+device build, API URL, Maestro installation, and complete auth-suite setup.
 
 ## Customize first
 
@@ -75,6 +82,9 @@ device.
 ```text
 apps/
   api/       NestJS, Prisma, PostgreSQL, and authentication
+  e2e/       Maestro workspace, account setup, flows, and runner
   mobile/    Expo, React Native, protected navigation, and reusable UI
+packages/
+  e2e-contract/ shared stable selectors for mobile and Maestro
 .agents/     reusable engineering rules and task skills
 ```

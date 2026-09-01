@@ -1,0 +1,8 @@
+appId: com.example.reactnativeneststarter
+flows:
+  - 'flows/**/*.yaml'
+testOutputDir: artifacts
+env:
+  APP_ID: com.example.reactnativeneststarter
+  API_URL: http://localhost:3000
+  E2E_PASSWORD: MaestroE2EPassword123

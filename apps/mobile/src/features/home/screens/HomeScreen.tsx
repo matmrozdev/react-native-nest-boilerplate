@@ -1,3 +1,4 @@
+import { testIds } from '@app/e2e-contract/test-ids';
 import { View } from 'react-native';
 
 import { useAuth } from '@/providers/AuthProvider';
@@ -13,7 +14,9 @@ export const HomeScreen = () => {
   return (
     <Screen contentContainerStyle={styles.content}>
       <View style={styles.header}>
-        <Text variant="heading">Welcome</Text>
+        <Text testID={testIds.home.screen} variant="heading">
+          Welcome
+        </Text>
         <Text tone="muted">Your authenticated application is ready.</Text>
       </View>
       <Card padding="large" style={styles.card} variant="elevated">
