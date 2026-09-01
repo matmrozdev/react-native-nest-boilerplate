@@ -22,7 +22,7 @@ rules without prescribing a product domain.
 ## Requirements
 
 - Node.js 24+
-- pnpm 11.21+
+- pnpm 11.25+
 - Docker with Docker Compose
 - Android Studio or Xcode for native development
 

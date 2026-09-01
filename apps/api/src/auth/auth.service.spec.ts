@@ -90,7 +90,7 @@ describe('AuthService', () => {
     prisma.user.create.mockRejectedValue(
       new Prisma.PrismaClientKnownRequestError('duplicate email', {
         code: 'P2002',
-        clientVersion: '7.9.1',
+        clientVersion: '7.10.0',
       }),
     );
 
