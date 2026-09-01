@@ -1,3 +1,4 @@
+import { testIds } from '@app/e2e-contract/test-ids';
 import { View } from 'react-native';
 
 import { ApiError } from '@/api/errors';
@@ -23,14 +24,18 @@ export const AccountScreen = () => {
       safeAreaEdges={['top', 'right', 'left']}
     >
       <View style={styles.header}>
-        <Text variant="heading">Account</Text>
+        <Text testID={testIds.account.screen} variant="heading">
+          Account
+        </Text>
         <Text tone="muted">Manage your authenticated session.</Text>
       </View>
       <Card padding="large" style={styles.card}>
         <View style={styles.header}>
           <Text variant="label">Signed in as</Text>
           {isUserLoading ? <Text>Loading your account…</Text> : null}
-          {user ? <Text>{user.email}</Text> : null}
+          {user ? (
+            <Text testID={testIds.account.email}>{user.email}</Text>
+          ) : null}
           {userError ? (
             <>
               <Text accessibilityRole="alert" tone="danger">
@@ -53,6 +58,7 @@ export const AccountScreen = () => {
           label="Sign out"
           loading={logoutMutation.isPending}
           onPress={() => logoutMutation.mutate()}
+          testID={testIds.account.signOutButton}
           variant="secondary"
         />
       </Card>

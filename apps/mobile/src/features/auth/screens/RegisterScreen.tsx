@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { testIds } from '@app/e2e-contract/test-ids';
 import { useRouter } from 'expo-router';
 import { Controller, useForm } from 'react-hook-form';
 import { View } from 'react-native';
@@ -51,7 +52,11 @@ export const RegisterScreen = () => {
   return (
     <Screen contentContainerStyle={styles.content}>
       <View style={styles.header}>
-        <Text style={styles.title} variant="heading">
+        <Text
+          style={styles.title}
+          testID={testIds.auth.register.screen}
+          variant="heading"
+        >
           Create your account
         </Text>
         <Text style={styles.subtitle} tone="muted">
@@ -82,6 +87,7 @@ export const RegisterScreen = () => {
                 onChangeText={onChange}
                 placeholder="Enter your email"
                 returnKeyType="next"
+                testID={testIds.auth.register.emailInput}
                 value={value}
               />
             )}
@@ -101,6 +107,7 @@ export const RegisterScreen = () => {
                 onChangeText={onChange}
                 placeholder="Enter your password"
                 returnKeyType="next"
+                testID={testIds.auth.register.passwordInput}
                 value={value}
               />
             )}
@@ -120,6 +127,7 @@ export const RegisterScreen = () => {
                 onSubmitEditing={submit}
                 placeholder="Confirm your password"
                 returnKeyType="done"
+                testID={testIds.auth.register.confirmPasswordInput}
                 value={value}
               />
             )}
@@ -132,6 +140,7 @@ export const RegisterScreen = () => {
             loading={registerMutation.isPending}
             onPress={submit}
             size="large"
+            testID={testIds.auth.register.submitButton}
           />
         </View>
       </Card>

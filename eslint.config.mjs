@@ -21,6 +21,18 @@ export default defineConfig([
     },
   },
   {
+    files: ['apps/e2e/maestro/scripts/**/*.js'],
+    languageOptions: {
+      globals: {
+        API_URL: 'readonly',
+        CREATE_VIA_API: 'readonly',
+        E2E_PASSWORD: 'readonly',
+        http: 'readonly',
+        output: 'readonly',
+      },
+    },
+  },
+  {
     files: ['apps/mobile/**/*.{js,mjs,cjs,jsx,ts,tsx}'],
     extends: [expoConfig],
     settings: {

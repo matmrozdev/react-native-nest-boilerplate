@@ -5,6 +5,7 @@ node_modules/
 dist/
 build/
 apps/api/src/generated/prisma/
+apps/e2e/maestro/artifacts/
 
 # Environment
 .env

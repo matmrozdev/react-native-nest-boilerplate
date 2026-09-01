@@ -1,0 +1,31 @@
+{
+  "account": {
+    "email": "account.email",
+    "screen": "account.screen",
+    "signOutButton": "account.sign-out-button"
+  },
+  "auth": {
+    "login": {
+      "createAccountButton": "auth.login.create-account-button",
+      "emailInput": "auth.login.email-input",
+      "passwordInput": "auth.login.password-input",
+      "screen": "auth.login.screen",
+      "submitButton": "auth.login.submit-button",
+      "successMessage": "auth.login.success-message"
+    },
+    "register": {
+      "confirmPasswordInput": "auth.register.confirm-password-input",
+      "emailInput": "auth.register.email-input",
+      "passwordInput": "auth.register.password-input",
+      "screen": "auth.register.screen",
+      "submitButton": "auth.register.submit-button"
+    }
+  },
+  "home": {
+    "screen": "home.screen"
+  },
+  "navigation": {
+    "accountTab": "navigation.account-tab",
+    "homeTab": "navigation.home-tab"
+  }
+}

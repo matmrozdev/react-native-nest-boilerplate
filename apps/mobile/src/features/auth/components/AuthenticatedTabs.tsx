@@ -1,3 +1,4 @@
+import { testIds } from '@app/e2e-contract/test-ids';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { Tabs } from 'expo-router';
 import { useMemo } from 'react';
@@ -27,6 +28,7 @@ export const AuthenticatedTabs = () => {
         name="index"
         options={{
           tabBarAccessibilityLabel: 'Home tab',
+          tabBarButtonTestID: testIds.navigation.homeTab,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons color={color} name="home" size={size} />
           ),
@@ -38,6 +40,7 @@ export const AuthenticatedTabs = () => {
         name="account"
         options={{
           tabBarAccessibilityLabel: 'Account tab',
+          tabBarButtonTestID: testIds.navigation.accountTab,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               color={color}
